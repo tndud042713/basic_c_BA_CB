@@ -1,0 +1,46 @@
+# Project: CB
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "1부터\ n까지\ 출력하기.o" "1부터\ n까지\ 홀수\ 출력하기.o" "1부터\ n까지\ 합\ 출력하기.o" "1부터\ n까지\ 짝수\ 개수\ 출력.o" n의_약수_출력하기.o "소수\ 판별하기.o" 최대공약수.o
+LINKOBJ  = "1부터 n까지 출력하기.o" "1부터 n까지 홀수 출력하기.o" "1부터 n까지 합 출력하기.o" "1부터 n까지 짝수 개수 출력.o" n의_약수_출력하기.o "소수 판별하기.o" 최대공약수.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = CB.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"1부터\ n까지\ 출력하기.o": 1부터\ n까지\ 출력하기.cpp
+	$(CPP) -c "1부터 n까지 출력하기.cpp" -o "1부터 n까지 출력하기.o" $(CXXFLAGS)
+
+"1부터\ n까지\ 홀수\ 출력하기.o": 1부터\ n까지\ 홀수\ 출력하기.cpp
+	$(CPP) -c "1부터 n까지 홀수 출력하기.cpp" -o "1부터 n까지 홀수 출력하기.o" $(CXXFLAGS)
+
+"1부터\ n까지\ 합\ 출력하기.o": 1부터\ n까지\ 합\ 출력하기.cpp
+	$(CPP) -c "1부터 n까지 합 출력하기.cpp" -o "1부터 n까지 합 출력하기.o" $(CXXFLAGS)
+
+"1부터\ n까지\ 짝수\ 개수\ 출력.o": 1부터\ n까지\ 짝수\ 개수\ 출력.cpp
+	$(CPP) -c "1부터 n까지 짝수 개수 출력.cpp" -o "1부터 n까지 짝수 개수 출력.o" $(CXXFLAGS)
+
+n의_약수_출력하기.o: n의_약수_출력하기.cpp
+	$(CPP) -c n의_약수_출력하기.cpp -o n의_약수_출력하기.o $(CXXFLAGS)
+
+"소수\ 판별하기.o": 소수\ 판별하기.cpp
+	$(CPP) -c "소수 판별하기.cpp" -o "소수 판별하기.o" $(CXXFLAGS)
+
+최대공약수.o: 최대공약수.cpp
+	$(CPP) -c 최대공약수.cpp -o 최대공약수.o $(CXXFLAGS)
